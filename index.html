@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Details</title>
+    <style>
+        body {
+            background-image: url('picture/bg.png');
+            background-repeat: repeat;
+            background-size: cover;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .character-detail {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .char-name-tv-image {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+        #char-image {
+            border-radius: 15px;
+            width: 200px;
+            height: 400px;
+            object-fit: cover;
+        }
+        .detail-section {
+            margin-bottom: 20px;
+        }
+        .detail-label {
+            font-weight: 700;
+            font-size: larger;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .name-tv h1 {
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .name-tv h4 {
+            margin-top: 0;
+            color: #cccccc;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="character-detail">
+        <a href="index.html">
+            <img src="picture/logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="char-name-tv-image">
+            <div class="name-tv">
+                <h1 id="characterName"></h1>
+                <h4 id="tvProgram"></h4>
+            </div>
+            <img id="char-image" alt="Character image">
+        </div>
+
+        <div class="detail-section">
+            <h3 class="detail-label">Personality:</h3>
+            <div id="personality"></div>
+        </div>
+        
+        <div class="detail-section">
+            <h3 class="detail-label">Appearance:</h3>
+            <div id="appearance"></div>
+        </div>
+    </div>
+
+    <script>
+        // Sample character data - you can replace this with your actual character data
+        const character = {
+            Character_Name: "Ice bear",
+            TV_Program: "we bare bears",
+            Image: "https://static.wikia.nocookie.net/webarebears/images/7/7d/Icee.png", // Update with your image path
+            Personality: "Ice Bear is stoic, mature, and rarely shows emotion, often speaking in the third person. Though quiet and distant, he is highly observant, protective, and deeply cares for his brothers, handling most of the chores and looking out for them in subtle ways. Ice Bear enjoys solitude, cold environments, and physical challenges, and has a strong sense of cleanliness. Despite his reserved nature, he occasionally shows warmth through small gestures and a rare smile. Inspired by characters like Snoopy, he blends loyalty and strength with quiet intelligence and a caring heart.",
+            Appearance: "Ice Bear is an anthropomorphic polar bear. His body is completely covered in white fur. (Sometimes, it has a very light shade of yellow/brown, but like a lighter blue. Slightly more so than the white fur of Panda.) Even though he is the youngest of the Bears[3], he is taller, thinner, and stronger than his older brothers."
+        };
+
+        // Function to load character data
+        function loadCharacterData() {
+            document.getElementById('characterName').textContent = character.Character_Name;
+            document.getElementById('tvProgram').textContent = character.TV_Program;
+            document.getElementById('char-image').src = character.Image;
+            document.getElementById('personality').textContent = character.Personality;
+            document.getElementById('appearance').textContent = character.Appearance;
+        }
+
+        // Load the character data when the page loads
+        window.onload = loadCharacterData;
+    </script>
+</body>
+</html>
